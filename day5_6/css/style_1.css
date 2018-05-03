@@ -1,0 +1,29 @@
+.container {
+    width: 600px;
+    margin: 20px auto;
+}
+li,dt {
+    font-weight: bold;
+}
+li span,li a {
+    font-weight: normal;
+}
+dd {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    float: left;
+    margin-right: 30px;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}

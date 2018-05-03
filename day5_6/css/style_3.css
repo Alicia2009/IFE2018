@@ -1,0 +1,72 @@
+li,dt {
+    font-weight: bold;
+}
+li span,li a {
+    font-weight: normal;
+}
+h3,dt,dd {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    float: left;
+    margin-right: 30px;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.container {
+    width: 800px;
+    margin: 20px auto;
+    border-bottom: 1px solid #cccccc;
+}
+.header-wrapper {
+    height:80px;
+    line-height:80px;
+    background-color:#808080;
+}
+.header h1 {
+    color:#ffffff;
+    margin-left:20px;
+}
+.box {
+    height:130px;
+    border:1px solid #cccccc;
+    border-bottom:none;
+    margin-bottom:1px;
+}
+.box h3 {
+    float:left;
+    line-height:130px;
+    border-right:1px solid #cccccc;
+    box-sizing:border-box;
+    text-align:center;
+    width:15%;
+    background-color:#d3d3d3;
+    background-clip:content-box;
+}
+.box ul,.box dl {
+    float:left;
+    box-sizing:border-box;
+    padding-left:10px;
+    width:85%;
+}
+.box dl dt {
+    display:inline;
+}
+.box dl dd {
+    display:inline;
+}
+/*借助Unicode字符，inline元素实现换行*/
+.box dl dd::after {
+    content:"\A";
+    white-space:pre;
+}

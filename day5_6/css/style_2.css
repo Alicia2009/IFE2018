@@ -1,0 +1,49 @@
+.container {
+    width: 800px;
+    margin: 20px auto;
+    position:relative;
+}
+li,dt {
+    font-weight: bold;
+}
+li span,li a {
+    font-weight: normal;
+}
+dd {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    float: left;
+    margin-right: 30px;
+}
+.clearfix::after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/*这里在header外面再加一层div(header-wrapper) 实现浮动。header本身用绝对定位，为了实现高度和container高度一致*/
+
+.header-wrapper {
+    float:left;
+}
+.main{
+    width:75%;
+    float:right;
+}
+.header{
+    position:absolute;
+    width:20%;
+    height:100%;
+    background-color:#00bfff;
+    text-align:center;
+}
+h1 {
+    color:#ffffff;
+}
