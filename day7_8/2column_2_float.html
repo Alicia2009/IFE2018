@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化 float</title>
+    <style>
+        .container {
+            width:100%;
+        }
+        .left{
+            float:left;
+            width:200px;
+            border:5px solid blue;
+            box-sizing: border-box;
+            height:800px;
+            margin-right:20px;
+
+        }
+        .right {
+            overflow:hidden;
+            border:5px solid red;
+            height:800px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        左侧宽度固定200PX
+    </div>
+    <div class="right">
+        右侧根据浏览器宽度 自适应变化
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化 position</title>
+    <style>
+        .left {
+            position: absolute;
+            left:0;
+            background-color: blue;
+            height:800px;
+            width:200px;
+        }
+        .main {
+            position: absolute;
+            left:200px;
+            background-color:red;
+            height:800px;
+            margin:0 20px;
+        }
+        .right {
+            margin-left: 440px;
+            background-color: pink;
+            height:800px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="left">
+    这是left部分固定宽度
+</div>
+<div class="main">
+    这是main部分 也是固定宽度
+</div>
+<div class="right">
+    这是right部分根据浏览器宽度变化而自适应变化
+</div>
+
+</body>
+</html>

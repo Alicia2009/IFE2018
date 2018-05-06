@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局，左侧占30%宽度，右侧占70%宽度  position方式</title>
+    <style>
+        .container {
+            width:100%;
+            position:relative;
+        }
+        .left{
+            background-color:blue;
+            position:absolute;
+            left:0;
+            width:30%;
+            height:800px;
+
+        }
+        .right {
+            background-color:pink;
+            position:absolute;
+            right:0;
+            width:70%;
+            height:800px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        左侧占30%宽度
+    </div>
+    <div class="right">
+        右侧占70%宽度
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化 flexbox</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: flex-start;
+        }
+        .left{
+            flex: 0 0 auto;
+            width:200px;
+            border:5px solid blue;
+            margin-right:20px;
+            height:800px;
+        }
+        .right {
+            flex: 1 1 auto;
+            border:5px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        左侧宽度固定200PX
+    </div>
+    <div class="right">
+        右侧根据浏览器宽度 自适应变化<br/>
+        这里的内容可能比左侧高，也可能比左侧低。宽度需要自适应。
+    </div>
+</div>
+</body>
+</html>

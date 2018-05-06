@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化 float</title>
+    <style>
+        .left {
+            float:left;
+            background-color: blue;
+            height:800px;
+            width:200px;
+        }
+        .right {
+            float:right;
+            background-color: pink;
+            height:800px;
+            width:200px;
+        }
+        .main {
+            margin: 0 220px;
+            background-color:red;
+            height:800px;
+        }
+    </style>
+</head>
+<body>
+ <!--注意这种情况下，三部分的html顺序-->
+<div class="left">
+    这是left部分固定宽度
+</div>
+<div class="right">
+    这是right部分 固定宽度
+</div>
+<div class="main">
+    这是main部分 随着浏览器宽度变化 而自适应变化
+</div>
+</body>
+</html>

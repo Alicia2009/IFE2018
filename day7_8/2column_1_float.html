@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局，左侧占30%宽度，右侧占70%宽度  float方式</title>
+    <style>
+        .container {
+            width:100%;
+        }
+       .left{
+           background-color:blue;
+           float:left;
+           width:30%;
+           height:800px;
+
+       }
+        .right {
+            background-color:pink;
+            float:left;
+            width:70%;
+            height:800px;
+        }
+        .clearfix::after {
+            content: "";
+            display:block;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+<div class="container clearfix">
+    <div class="left">
+        左侧占30%宽度
+    </div>
+    <div class="right">
+        右侧占70%宽度
+    </div>
+</div>
+</body>
+</html>
