@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>设计稿实现静态页面</title>
+    <style>
+        body, ul, li {
+            padding:0;
+            margin:0;
+            list-style: none;
+        }
+
+       a {
+           text-decoration: none;
+       }
+       /*居中容器*/
+         .container {
+             width: 960px;
+             height: inherit;
+             margin: 0 auto;
+         }
+        .header {
+            background-color: #414141;
+            color: #ffffff;
+            height: 100px;
+        }
+        .footer {
+            background-color: #5A5A5A;
+            color: #ffffff;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            font-size: 16px;
+            margin-top:20px;
+        }
+        .clearfix::after {
+            content:"";
+            display: block;
+            clear:both;
+        }
+        /*头部区域*/
+        .logo {
+            float: left;
+            line-height:100px;
+            font-size: 24px;
+        }
+        .navigation {
+            float: right;
+            margin-top:5px;
+        }
+        .header ul li {
+            float: left;
+            margin-left:10px;
+        }
+        .header ul li a {
+            color:#ffffff;
+            text-decoration: underline;
+        }
+        /*banner区域*/
+        /*.header, .banner {*/
+            /*min-width: 960px;*/
+        /*}*/
+        .banner {
+            background-color: #66BB33;
+            height:300px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .pages{
+            position: absolute;
+            right:0;
+            bottom:10px;
+            left: 50%;
+            width: 184px;
+            margin-left: 296px;
+        }
+        .pages ul li {
+            display: inline-block;
+            margin-left:10px;
+            background-color: #B2DD99;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .pages ul li a {
+            display: inline-block;
+            width:30px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .pages ul li a.active {
+            height:50px;
+            line-height:60px;
+            background-color: #E0F1D6;
+        }
+        /*主导航区域*/
+        .navBar ul li {
+            float:left;
+            width:120px;
+            height:50px;
+            line-height: 50px;
+            border:1px solid #cccccc;
+            background-color:#EEEEEE;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            text-align: center;
+            margin-bottom: -1px;
+        }
+        .navBar ul li a {
+            color:#000000;
+        }
+        .navBar ul li.active {
+            background-color: #ffffff;
+            border-bottom: 1px solid transparent;
+        }
+        .line {
+            border-bottom:1px solid #cccccc;
+            margin-bottom: 10px;
+        }
+        /*主要内容区域*/
+        .contentBox {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 960px;
+            margin:0 auto;
+            /*border:1px solid red;*/
+        }
+        .box {
+            border:1px solid #D9D9D9;
+            box-sizing: border-box;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .content_1, .content_2, .content_3 {
+            flex:4;
+            padding:100px;
+        }
+        .content_4, .content_5, .content_6, .content_7, .content_8, .content_9, .content_10 {
+            flex:3;
+            padding:80px;
+        }
+        /*媒体查询。屏幕缩小时，调整居中容器container的大小，避免BUG*/
+        @media screen and (max-width: 960px) {
+
+            .container {
+                width: auto;
+            }
+            .pages {
+                margin-left: calc(50% - 184px);
+            }
+
+        }
+    </style>
+</head>
+<body>
+<!--设计稿描述：
+设计稿分为头部，中间的Banner，主导航，内容区域，底部
+头部区域为100%宽的一个深色背景，头部中间有一块960px的定宽居中区域，里面包括了左边的Logo和右上角导航
+Banner为100%宽的区块，中间右下方有banner轮显的当前图片数字的示例，其中正在显示的图片对应的数字有特殊样式（注意不需要实现轮显banner的业务逻辑，只是按照设计稿做静态样式）
+主导航区域，有一个100%宽的灰色线条，线条之上，在中间960px区域是导航菜单，当前正在浏览页对应的菜单有特殊样式
+主要内容区域，宽度为960px，里面每个内容都有至少80px的padding，每一个内容的宽度均为自适应，可以使用flex布局-->
+<div class="header">
+    <div class="container clearfix">
+        <div class="logo">
+            Logo
+        </div>
+        <div class="navigation">
+            <ul class="clearfix">
+                <li><a href="#">Github</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="banner">
+    <div class="container">
+    <div class="pages">
+        <ul class="">
+            <li><a href="#">1</a></li>
+            <li><a class="active" href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+<div class="main">
+    <div class="navBar container">
+        <ul class="clearfix">
+            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#">PROFILE</a></li>
+            <li><a href="#">ABOUT</a></li>
+        </ul>
+    </div>
+    <!--有一个100%宽的灰色线条-->
+    <div class="line">
+    </div>
+    <div class="contentBox">
+            <div class="box content_1">Tacos actually microdosing,  content1</div>
+            <div class="box content_2">Content 2</div>
+            <div class="box content_3">Content 3</div>
+            <div class="box content_4">Content 4</div>
+            <div class="box content_5">This is Content 5</div>
+            <div class="box content_6">This is Content 6</div>
+            <div class="box content_7">This is Content 7</div>
+            <div class="box content_8">This is Content 8</div>
+            <div class="box content_9">This is Content 9</div>
+            <div class="box content_10">This is Content 10</div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        @2018 ife.baidu.com
+    </div>
+</div>
+</body>
+</html>
