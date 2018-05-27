@@ -17,7 +17,10 @@
         var result = document.getElementById('result');
         var reg = /^[0-9]+$/;
         if((!reg.test(decNumber)) || (!reg.test(bit)) )
-                console.log('请输入非负整数');
+        {
+            console.log('请输入非负整数');
+            alert('请输入非负整数');
+        }
         else {
             decNumber = parseInt(decNumber);
             console.log(decNumber);
