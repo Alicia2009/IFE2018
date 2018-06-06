@@ -7,30 +7,36 @@
         .image {
             width:480px;
             height:480px;
-            border:1px solid red;
             background-image:url('erik_ce204002.jpg');
             background-position: 0 0;
         }
     </style>
 </head>
 <body>
-<div class = "image">
-</div>
+    <div class = "image"></div>
+    <br/>
+    <button id = 'stop'>停止动画</button>
 <script>
-    var imageBox = document.getElementsByClassName('image')[0];
-    var x =0,y=0;
-    function smile()
-    {
-        if(y> -8160){
-            y = y - 480;
-            imageBox.style.backgroundPositionY = y + 'px';
-            console.log(imageBox.style.backgroundPositionY);
+    window.onload = function () {
+        var imageBox = document.getElementsByClassName('image')[0];
+        var stopButton = document.getElementById('stop');
+        var x =0,y=0;
+        function smile()
+        {
+            if(y> -8160){
+                imageBox.style.backgroundPositionY = y + 'px';
+                y = y - 480;
+                console.log(imageBox.style.backgroundPositionY);
+            }
+            else {
+                y = 0;
+            }
         }
-        else {
+        timer = setInterval(smile,100);
+        stopButton.onclick = function () {
             clearInterval(timer);
         }
     }
-    timer = setInterval(smile,100);
 </script>
 </body>
 </html>
