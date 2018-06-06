@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE2016中Erik笑容的动画</title>
+    <style type="text/css">
+        .image {
+            width:480px;
+            height:480px;
+            border:1px solid red;
+            background-image:url('erik_ce204002.jpg');
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class = "image">
+</div>
+<script>
+    var imageBox = document.getElementsByClassName('image')[0];
+    var x =0,y=0;
+    function smile()
+    {
+        if(y> -8160){
+            y = y - 480;
+            imageBox.style.backgroundPositionY = y + 'px';
+            console.log(imageBox.style.backgroundPositionY);
+        }
+        else {
+            clearInterval(timer);
+        }
+    }
+    timer = setInterval(smile,100);
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="http://www.softwhy.com/" />
+    <title>淡入淡出效果</title>
+    <!--针对以上 HTML，分别使用 setTimeout 和 setInterval 实现以下功能：-->
+    <!--点击按钮时，开始改变 fade-obj 的透明度，开始一个淡出（逐渐消失）动画，直到透明度为0-->
+    <!--在动画过程中，按钮的状态变为不可点击-->
+    <!--在动画结束后，按钮状态恢复，且文字变成“淡入”-->
+    <!--在 按钮显示 淡入 的状态时，点击按钮，开始一个“淡入”（逐渐出现）的动画，和上面类似按钮不可点，直到透明度完全不透明-->
+    <!--淡入动画结束后，按钮文字变为“淡出”-->
+</head>
+<body>
+<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+<button id="fade-btn">淡出</button>
+<script>
+    var btn =document.getElementById('fade-btn');
+    var box = document.getElementById('fade-obj');
+    box.style.opacity = '1';
+    var a;
+    btn.onclick = function () {
+        btn.disabled = true;
+        if(btn.innerHTML == '淡出')
+        {
+            a = 100;
+            timer =  setInterval(function () {
+                if(a>0)
+                {
+                    a--;
+                    box.style.opacity = a/100;
+                    console.log(a);
+                }
+                if(a == 0)
+                {
+                    btn.disabled = false;
+                    btn.innerHTML = '淡入';
+                    clearInterval(timer);
+                }
+            },100);
+        }
+        else
+        {
+            a = 0;
+            timer2 = setInterval(function () {
+                if(a<100)
+                {
+                    a++;
+                    box.style.opacity = a/100;
+                    console.log(a);
+                }
+                if(a == 100)
+                {
+                    btn.disabled = false;
+                    btn.innerHTML = '淡出';
+                    clearInterval(timer2);
+                }
+            },100);
+        }
+    }
+</script>
+</body>
+</html>
